@@ -52,14 +52,14 @@ workflows:
   build_test_deploy:
     jobs:
       - build
-      -test:
+      - test:
         requires:
-          -build
-      -deploy:
+          - build
+      - deploy:
         requires:
-          -build
-          -test
+          - build
+          - test
         filters:
           branches:
             only:
-              -master
+              - master
