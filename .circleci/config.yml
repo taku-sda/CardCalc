@@ -1,0 +1,7 @@
+﻿version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:11-jdk
+    steps: 
+      - run: echo 'Hello world!'
