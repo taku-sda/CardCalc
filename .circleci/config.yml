@@ -3,5 +3,21 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:11-jdk
+    working_directory: ~/repo
     steps: 
-      - run: echo 'Hello world!'
+      - checkout 
+      # 依存関係をダウンロードしてキャシュする
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ .Branch }}-{{ checksum "build.gradle" }}
+          - v1-dependencies-{{ .Branch }}-
+          - v1-dependencies-
+      - run: gradle dependencies
+      - run: gradle build -x test
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: v1-dependencies-{{ .Branch }}-{{ checksum "build.gradle" }}
+      - run: 
+          name: テストの実施
+          command: gradle test
