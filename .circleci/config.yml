@@ -35,8 +35,8 @@ jobs:
           name: テストの実施
           command: gradle test
   deploy:
-    docker:
-      - image: circleci/openjdk:11-jdk
+    machine:
+      image: circleci/classic:edge
     working_directory: ~/repo
     steps:
       # 共有したworkspaceをアタッチする
