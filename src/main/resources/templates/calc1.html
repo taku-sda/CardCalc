@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymelea.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title th:text="${title}">title</title>
@@ -7,7 +7,23 @@
 <body>
 <h2 th:text="${title}">title</h2>
 <!-- 入力フォーム -->
+<form action="#" th:action="@{/Calc1}" th:object="${calc1Form}" method="POST">
+	<label for="deck">山札 : </label>
+	<input type="text" name="deck" id="deck" th:field=*{deck}>
+	<div th:if="${#fields.hasErrors('deck')}" th:errors="*{deck}"></div><br>
+	<label for="target">目的のカード枚数 : </label>
+	<input type="text" name="target" id="target" th:field=*{target}>
+	<div th:if="${#fields.hasErrors('target')}" th:errors="*{target}"></div><br>
+	<label for="draw">引く枚数 : </label>
+	<input type="text" name="draw" id="draw" th:field=*{draw}>
+	<div th:if="${#fields.hasErrors('draw')}" th:errors="*{draw}"></div><br>
+	<label for="want">引きたい枚数 : </label>
+	<input type="text" name="want" id="want" th:field=*{want}>
+	<div th:if="${#fields.hasErrors('want')}" th:errors="*{want}"></div><br><br>
+	<input type="submit" value="計算">
+</form>
 
 <!-- 計算結果表示 -->
+
 </body>
 </html>
