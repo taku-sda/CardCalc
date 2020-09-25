@@ -24,7 +24,7 @@ public class DeckOrLessValidator implements ConstraintValidator<DeckOrLess, Obje
 		Integer comparingPropertyValue = (Integer) beanWrapper.getPropertyValue(comparingProperty);
 		int compare = propertyValue.compareTo(comparingPropertyValue);
 
-		if(compare < 0) {
+		if(compare <= 0) {
 			return true;
 		}else {
 			context.disableDefaultConstraintViolation();
