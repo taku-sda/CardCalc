@@ -6,7 +6,7 @@ import javax.validation.ConstraintValidatorContext;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
 
-public class DeckOrLessValidator implements ConstraintValidator<DeckOrLess, Integer>{
+public class DeckOrLessValidator implements ConstraintValidator<DeckOrLess, Object>{
 	
 	private String property;
 	private String comparingProperty;
@@ -18,12 +18,12 @@ public class DeckOrLessValidator implements ConstraintValidator<DeckOrLess, Inte
 		this.message = constraintAnnotation.message();
 	}
 	
-	public boolean isValid(Integer value, ConstraintValidatorContext context) {
+	public boolean isValid(Object value, ConstraintValidatorContext context) {
 		BeanWrapper beanWrapper = new BeanWrapperImpl(value);
 		Integer propertyValue = (Integer) beanWrapper.getPropertyValue(property);
 		Integer comparingPropertyValue = (Integer) beanWrapper.getPropertyValue(comparingProperty);
 		int compare = propertyValue.compareTo(comparingPropertyValue);
-		
+
 		if(compare < 0) {
 			return true;
 		}else {
