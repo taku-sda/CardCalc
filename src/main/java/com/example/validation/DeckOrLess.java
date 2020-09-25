@@ -20,7 +20,7 @@ import javax.validation.Payload;
 public @interface DeckOrLess {
 	
 	String message() default "com.example.validation.DeckOrLess.message";
-	Class<?>[] group() default {};
+	Class<?>[] groups() default {};
 	Class< ? extends Payload>[] payload() default {};
 
 	String property();
