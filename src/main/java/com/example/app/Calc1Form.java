@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 
 import com.example.validation.DeckOrLess;
 
-@DeckOrLess(property = "taget", comparingProperty = "deck",
+@DeckOrLess(property = "target", comparingProperty = "deck",
 	message = "目的のカードの枚数は山札以下にしてください")
 @DeckOrLess(property = "draw", comparingProperty = "deck",
 	message = "引く枚数は山札以下にしてください")
