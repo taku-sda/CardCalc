@@ -21,17 +21,13 @@ public class Calc1Form implements Serializable {
 	/** 山札の最大枚数. */
 	private static final int MAX_DECK_NUMBER = 60;
 	
-	@NotNull(message = "枚数を入力してください")
 	@Max(value = MAX_DECK_NUMBER, message = "山札は60枚以下です")
 	@Min(value = 1, message = "1枚以上にしてください")
 	private int deck;
-	@NotNull(message = "枚数を入力してください")
 	@Min(value = 1, message = "1枚以上にしてください")
 	private int target;
-	@NotNull(message = "枚数を入力してください")
 	@Min(value = 1, message = "1枚以上にしてください")
 	private int draw;
-	@NotNull(message = "枚数を入力してください")
 	@Min(value = 1, message = "1枚以上にしてください")
 	private int want;
 	
