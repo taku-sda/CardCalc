@@ -11,7 +11,7 @@ public class Calc1ServiceImpl implements Calc1Service {
 		double failureProbability = 0;
 		int j = 0;
 		while(j < want) {
-			failureProbability += combination(target, j) * combination(deck - target, draw - j) / (combination(deck, draw));
+			failureProbability += combination(target, j) * combination(deck - target, draw - j) / combination(deck, draw);
 			j++;
 		}
 		double successProbability = 1 - failureProbability;
