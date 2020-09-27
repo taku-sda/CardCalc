@@ -14,6 +14,8 @@ import com.example.validation.DeckOrLess;
 	message = "引く枚数は山札以下にしてください")
 @DeckOrLess(property = "want", comparingProperty = "target",
 	message = "引きたい枚数は目的のカードの枚数以下にしてください")
+@DeckOrLess(property = "want", comparingProperty = "draw",
+message = "引きたい枚数は引く枚数以下にしてください")
 public class Calc1Form implements Serializable {
 	private static final long serialVersionUID = 1L;
 	/** 山札の最大枚数. */

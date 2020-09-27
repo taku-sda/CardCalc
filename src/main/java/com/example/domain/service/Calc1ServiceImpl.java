@@ -11,7 +11,7 @@ public class Calc1ServiceImpl implements Calc1Service {
 		double failureProbability = 0;
 		int j = 0;
 		while(j < want) {
-			failureProbability += combination(target, j) * combination(deck - target, draw - j) / combination(deck, draw);
+			failureProbability += combination(target, j) * combination(deck - target, draw - j) / (combination(deck, draw));
 			j++;
 		}
 		double successProbability = 1 - failureProbability;
@@ -20,13 +20,15 @@ public class Calc1ServiceImpl implements Calc1Service {
 	}
 
 	@Override
-	public int combination(int n, int r) {
-		int result = 1;
+	public double combination(int n, int r) {
+		double numerator = 1;
+		double denominator = 1;
 		while(r > 0) {
-			result *=  n / r;
+			numerator *= n;
+			denominator *= r;
 			n--;
 			r--;
 		}
-		return result;
+		return numerator / denominator;
 	}
 }

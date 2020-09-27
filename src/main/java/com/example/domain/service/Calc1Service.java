@@ -17,5 +17,5 @@ public interface Calc1Service {
 	 * @param r	取り出す個数
 	 * @return	組み合わせの数
 	 */
-	int combination(int n, int r);
+	double combination(int n, int r);
 }

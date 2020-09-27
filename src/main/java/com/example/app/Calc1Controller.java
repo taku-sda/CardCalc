@@ -56,7 +56,7 @@ public class Calc1Controller {
 		double calcResult = calc1Service.calculate(form.getDeck(), form.getTarget(),
 				form.getDraw(), form.getWant());
 		//求めた確率は小数点以下2桁になるように四捨五入して格納
-		model.addAttribute("calcResult", String.format("%.2f", calcResult));
+		model.addAttribute("calcResult", String.format("%.2f", calcResult) + "%");
 		model.addAttribute("title", "CardCalc | Calc1");
 		return"calc1";
 	}
