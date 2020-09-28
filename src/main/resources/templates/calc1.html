@@ -5,6 +5,7 @@
 <title th:text="${title}">title</title>
 </head>
 <body>
+<a href="#" th:href="@{/}">戻る</a>
 <h2 th:text="${title}">title</h2>
 <!-- 入力フォーム -->
 <form action="#" th:action="@{/Calc1}" th:object="${calc1Form}" method="POST">
