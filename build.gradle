@@ -51,7 +51,7 @@ checkstyle {
 pmd {
 	 ignoreFailures = true
      toolVersion = "6.21.0"
-     ruleSetFiles = rootProject.files("/config/pmd/pmd-rulesets.xml")
+     ruleSetFiles = files("config/pmd/pmd-rulesets.xml")
      ruleSets = []
 }
 
