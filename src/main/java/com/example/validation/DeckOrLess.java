@@ -29,7 +29,7 @@ public @interface DeckOrLess {
 	@Target({ TYPE, ANNOTATION_TYPE })
 	@Retention(RUNTIME)
 	@Documented
-	public @interface List{
+	@interface List{
 		DeckOrLess[] values();
 	}
 }

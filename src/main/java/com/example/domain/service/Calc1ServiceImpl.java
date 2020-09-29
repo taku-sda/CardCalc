@@ -20,9 +20,11 @@ public class Calc1ServiceImpl implements Calc1Service {
 	}
 
 	@Override
-	public double combination(int n, int r) {
+	public double combination(int all, int pick) {
 		double numerator = 1;
 		double denominator = 1;
+		int n = all;
+		int r = pick;
 		while(r > 0) {
 			numerator *= n;
 			denominator *= r;
