@@ -19,9 +19,10 @@ class Calc1ServiceImplTest {
 	
 	@Nested
 	@DisplayName("calculateのテスト")
-	public class calulateTest{
-		@DisplayName("確率が正しい範囲で得られる")
+	class calulateTest{
+		
 		@ParameterizedTest
+		@DisplayName("確率が正しい範囲で得られる")
 		@CsvSource({
 		    "60, 60, 60, 60",
 		    "60, 60, 1, 1",
@@ -46,9 +47,9 @@ class Calc1ServiceImplTest {
 	
 	@Nested
 	@DisplayName("combinationのテスト")
-	public class combinationTest{
-		@DisplayName("正しい組み合わせの計算結果が得られる")
+	class combinationTest{
 		@ParameterizedTest
+		@DisplayName("正しい組み合わせの計算結果が得られる")
 		@CsvSource({
 		    "1, 1, 1.0",
 		    "2, 1, 2.0",
