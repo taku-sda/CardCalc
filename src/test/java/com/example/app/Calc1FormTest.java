@@ -29,8 +29,8 @@ class Calc1FormTest {
 		form.setWant(1);
 	}
 	
-	@DisplayName("deckのバリデーションが正しい")
 	@ParameterizedTest
+	@DisplayName("deckのバリデーションが正しい")
 	@CsvSource({
 	    "61, '山札は60枚以下です'",
 	    "0, '1枚以上にしてください'"
@@ -43,8 +43,9 @@ class Calc1FormTest {
         		.anyMatch(it -> it.getDefaultMessage().equals(message) ), is(true));
 	}
 	
-	@DisplayName("targetのバリデーションが正しい")
+	
 	@ParameterizedTest
+	@DisplayName("targetのバリデーションが正しい")
 	@CsvSource({
 	    "41,  '目的のカードの枚数は山札以下にしてください'",
 	    "0,  '1枚以上にしてください'"
@@ -57,8 +58,9 @@ class Calc1FormTest {
         		.anyMatch(it -> it.getDefaultMessage().equals(message) ), is(true));
 	}
 	
-	@DisplayName("drawのバリデーションが正しい")
+	
 	@ParameterizedTest
+	@DisplayName("drawのバリデーションが正しい")
 	@CsvSource({
 	    "41,  '引く枚数は山札以下にしてください'",
 	    "0,  '1枚以上にしてください'"
@@ -71,8 +73,9 @@ class Calc1FormTest {
         		.anyMatch(it -> it.getDefaultMessage().equals(message) ), is(true));
 	}
 	
-	@DisplayName("wantのバリデーションが正しい")
+	
 	@ParameterizedTest
+	@DisplayName("wantのバリデーションが正しい")
 	@CsvSource({
 		"5,  '引きたい枚数は目的のカードの枚数以下にしてください'",
 	    "6,  '引きたい枚数は引く枚数以下にしてください'",
