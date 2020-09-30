@@ -50,7 +50,7 @@ checkstyle {
 }
 
 spotbugs {
-  ignoreFailures = false
+  ignoreFailures = true
   toolVersion = "4.1.3"
 }
 
