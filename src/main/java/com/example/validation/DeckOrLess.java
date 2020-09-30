@@ -13,23 +13,26 @@ import javax.validation.Constraint;
 import javax.validation.Payload;
 
 @Documented
-@Constraint(validatedBy = {DeckOrLessValidator.class})
+@Constraint(validatedBy = { DeckOrLessValidator.class })
 @Target({ TYPE, ANNOTATION_TYPE })
 @Retention(RUNTIME)
 @Repeatable(RepeatValueHolderAnnotation.class)
 public @interface DeckOrLess {
-	
-	String message() default "com.example.validation.DeckOrLess.message";
-	Class<?>[] groups() default {};
-	Class< ? extends Payload>[] payload() default {};
 
-	String property();
-	String comparingProperty();
-	
-	@Target({ TYPE, ANNOTATION_TYPE })
-	@Retention(RUNTIME)
-	@Documented
-	@interface List{
-		DeckOrLess[] values();
-	}
+  String message() default "com.example.validation.DeckOrLess.message";
+
+  Class<?>[] groups() default {};
+
+  Class<? extends Payload>[] payload() default {};
+
+  String property();
+
+  String comparingProperty();
+
+  @Target({ TYPE, ANNOTATION_TYPE })
+  @Retention(RUNTIME)
+  @Documented
+  @interface List {
+    DeckOrLess[] values();
+  }
 }

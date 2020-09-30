@@ -12,7 +12,5 @@ import java.lang.annotation.Target;
 @Target({ TYPE, ANNOTATION_TYPE })
 @Retention(RUNTIME)
 public @interface RepeatValueHolderAnnotation {
-	DeckOrLess[] value();
+  DeckOrLess[] value();
 }
-
-
