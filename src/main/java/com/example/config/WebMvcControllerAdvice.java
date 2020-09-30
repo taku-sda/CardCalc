@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.InitBinder;
 @ControllerAdvice
 public class WebMvcControllerAdvice {
 
-	// 入力値の空文字をnullに変換するフィルター
-	@InitBinder
-    public void initBinder(WebDataBinder dataBinder) {
-        dataBinder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
-    }
-    
+  // 入力値の空文字をnullに変換するフィルター
+  @InitBinder
+  public void initBinder(WebDataBinder dataBinder) {
+    dataBinder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
+  }
+
 }

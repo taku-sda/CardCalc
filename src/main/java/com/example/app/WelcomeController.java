@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/")
 public class WelcomeController {
-	@GetMapping
-	public String index(Model model) {
-		model.addAttribute("title", "CardCalc");
-		return "index";
-	}
+  @GetMapping
+  public String index(Model model) {
+    model.addAttribute("title", "CardCalc");
+    return "index";
+  }
 
 }
