@@ -1,5 +1,7 @@
 package com.example.validation;
 
+import java.util.Optional;
+
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
@@ -20,8 +22,10 @@ public class DeckOrLessValidator implements ConstraintValidator<DeckOrLess, Obje
 
   public boolean isValid(Object value, ConstraintValidatorContext context) {
     BeanWrapper beanWrapper = new BeanWrapperImpl(value);
-    Integer propertyValue = (Integer) beanWrapper.getPropertyValue(property);
-    Integer comparingPropertyValue = (Integer) beanWrapper.getPropertyValue(comparingProperty);
+    Optional<Integer> propertyValueOpt = Optional.ofNullable((Integer) beanWrapper.getPropertyValue(property));
+    Optional<Integer> comparingPropertyValueOpt = Optional.ofNullable((Integer) beanWrapper.getPropertyValue(comparingProperty));
+    Integer propertyValue = propertyValueOpt.orElse(0);
+    Integer comparingPropertyValue = comparingPropertyValueOpt.orElse(0);
     int compare = propertyValue.compareTo(comparingPropertyValue);
 
     if (compare <= 0) {
